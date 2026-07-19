@@ -1,0 +1,367 @@
+/* =========================
+   Nail Sultanbekov Terminal CV
+   Main Styling
+========================= */
+
+:root {
+    --bg: #050505;
+    --terminal: #0b0f0b;
+    --green: #00ff66;
+    --green-dark: #00aa44;
+    --text: #d7ffd7;
+    --gray: #7a7a7a;
+}
+
+
+/* Global */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #102010 0%,
+            var(--bg) 65%
+        );
+
+    color: var(--text);
+
+    font-family:
+        "Fira Code",
+        "JetBrains Mono",
+        "Courier New",
+        monospace;
+
+    overflow-x: hidden;
+}
+
+
+/* CRT scanline effect */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* Terminal Window */
+
+.terminal-window {
+
+    width: min(950px, 92vw);
+
+    min-height: 620px;
+
+    background:
+        rgba(10,15,10,0.95);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 0 40px rgba(0,255,100,0.15),
+
+        inset 0 0 30px rgba(0,255,100,0.05);
+
+    border:
+
+        1px solid rgba(0,255,100,0.25);
+}
+
+
+
+/* Header */
+
+.terminal-header {
+
+    height: 42px;
+
+    background: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    border-bottom:
+        1px solid rgba(0,255,100,0.15);
+
+}
+
+
+.buttons {
+
+    position: absolute;
+
+    left: 15px;
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.buttons span {
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+}
+
+
+.red {
+    background: #ff5f56;
+}
+
+
+.yellow {
+    background: #ffbd2e;
+}
+
+
+.green {
+    background: #27c93f;
+}
+
+
+.terminal-title {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+
+/* Terminal content */
+
+.terminal-body {
+
+    padding: 30px;
+
+    min-height: 570px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+}
+
+
+p {
+
+    margin: 5px 0;
+
+}
+
+
+
+.ok {
+
+    color: var(--green);
+
+}
+
+
+
+.command {
+
+    color: var(--green);
+
+}
+
+
+
+/* Command line */
+
+
+.input-line {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+}
+
+
+.prompt {
+
+    color: var(--green);
+
+    margin-right: 10px;
+
+    white-space: nowrap;
+
+}
+
+
+
+#command-input {
+
+    flex: 1;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: inherit;
+
+}
+
+
+
+.cursor {
+
+    width: 9px;
+
+    height: 18px;
+
+    background: var(--green);
+
+    margin-left: 3px;
+
+    animation:
+        blink 1s infinite;
+
+}
+
+
+
+/* Cursor animation */
+
+@keyframes blink {
+
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%,100% {
+        opacity: 0;
+    }
+
+}
+
+
+
+/* Links */
+
+a {
+
+    color: var(--green);
+
+    text-decoration: none;
+
+}
+
+
+a:hover {
+
+    text-shadow:
+        0 0 8px var(--green);
+
+}
+
+
+
+/* Command output */
+
+
+.output-block {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.output-title {
+
+    color: var(--green);
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:700px){
+
+    .terminal-window {
+
+        width: 96vw;
+
+        min-height: 90vh;
+
+    }
+
+
+    .terminal-body {
+
+        padding: 20px;
+
+        font-size: 14px;
+
+    }
+
+
+    .terminal-title {
+
+        display:none;
+
+    }
+
+
+    .prompt {
+
+        font-size: 13px;
+
+    }
+
+}

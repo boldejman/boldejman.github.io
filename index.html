@@ -2,44 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nail Sultanbekov</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Nail Sultanbekov</h1>
-        <p>Almost Bcc. of mathematical modeling</p>
-    </header>
-    <div class="container">
-        <h2>About me</h2>
-        <p>Hi, my name is Nail. I'm studying at the Faculty of Mathematics and Physics at Charles University in Prague. My field of study is mathematical modeling.
-        My study interests are computer simulations, numerical analysis and machine learning.</p>
 
-        <h2>Contacts</h2>
-        <ul>
-            <li>Email: nail040313@gmail.com</li>
-            <li>Phone: +420 775 280 933</li>
-            <li>GitHub: https://github.com/boldejman</li>
-        </ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nail Sultanbekov | AI Student</title>
+
+    <meta name="description" content="Nail Sultanbekov - Artificial Intelligence student at Charles University specializing in Deep Neural Networks, CNNs, Transformers, and Machine Learning.">
+
+    <meta name="author" content="Nail Sultanbekov">
+
+    <meta property="og:title" content="Nail Sultanbekov | AI Student">
+    <meta property="og:description" content="Artificial Intelligence student exploring Deep Neural Networks, CNNs, Transformers, and Machine Learning.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+<div class="terminal-window">
+
+    <div class="terminal-header">
+        <div class="buttons">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+        </div>
+
+        <div class="terminal-title">
+            nail@sultanbekov:~
+        </div>
     </div>
+
+
+    <main class="terminal-body">
+
+        <div id="boot">
+            <p>Booting NailOS v1.0...</p>
+            <p>Loading profile... <span class="ok">OK</span></p>
+            <p>Loading neural networks... <span class="ok">OK</span></p>
+            <p>Loading transformers... <span class="ok">OK</span></p>
+            <p>Connecting to GitHub... <span class="ok">OK</span></p>
+
+            <br>
+
+            <p>
+                Welcome to Nail Sultanbekov's terminal.
+            </p>
+
+            <p>
+                Type <span class="command">help</span> to see available commands.
+            </p>
+
+            <br>
+        </div>
+
+
+        <div id="terminal-output"></div>
+
+
+        <div class="input-line">
+
+            <span class="prompt">
+                visitor@nail:~$
+            </span>
+
+            <input 
+                id="command-input"
+                type="text"
+                autocomplete="off"
+                autofocus
+            >
+
+            <span class="cursor"></span>
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
